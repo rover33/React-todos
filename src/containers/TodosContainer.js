@@ -42,6 +42,14 @@ class TodosContainer extends Component{
             this.setState({todos})
         })
     }
+
+    updateTodo(updatedBody, todo){
+        console.log("working")
+        TodoModel.update(todo).then((res) => {
+            let todos = this.state.todos.
+        })
+    }
+
     render(){
         return(
             <div className="todosContainer">
@@ -49,7 +57,8 @@ class TodosContainer extends Component{
                 createTodo={this.createTodo.bind(this)}/>
                 <TodoList
                     todos={this.state.todos} 
-                    onDeleteTodo={this.deleteTodo.bind(this)}/>   
+                    onDeleteTodo={this.deleteTodo.bind(this)}
+                    onUpdateTodo={this.updateTodo.bind(this)}/>   
             </div>
         )
     }
